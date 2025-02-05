@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<CRUDenASPMVC.Web.Models.Entities.Estudiante>
+
+<h1>Estudiantes</h1>
+
+<table class ="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var estudiante in Model)
+        {
+            <tr>
+                <td>@estudiante.Id</td>
+                <td>@estudiante.Nombre</td>
+                <td>@estudiante.Email</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Estudiantes" asp-action="Edit" asp-route-id="@estudiante.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
